@@ -4,7 +4,7 @@ A Retrieval-Augmented Generation (RAG) app that answers questions about your own
 
 Built to explore the core engineering behind modern LLM applications: chunking strategy, semantic retrieval, prompt construction, and evaluation — not just wrapping an API call.
 
-**[Live demo →](#)** &nbsp;|&nbsp; **[Repo →](#)**
+
 
 ---
 
