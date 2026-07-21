@@ -34,6 +34,9 @@ How it works
                                               ▼
                                       Answer + sources
                                       shown in Streamlit UI
+
+
+
 Tech stack
 Layer	Tool	Why
 Vector database	Pinecone (serverless)	Managed, integrated embedding + retrieval in one API, no self-hosted infra
