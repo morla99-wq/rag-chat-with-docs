@@ -62,11 +62,13 @@ import streamlit as st
 
 load_dotenv()
 
-# Bridge Streamlit Cloud secrets into environment variables
-if "PINECONE_API_KEY" in st.secrets:
-    os.environ["PINECONE_API_KEY"] = st.secrets["PINECONE_API_KEY"]
-if "ANTHROPIC_API_KEY" in st.secrets:
-    os.environ["ANTHROPIC_API_KEY"] = st.secrets["ANTHROPIC_API_KEY"]
+try:
+    if "PINECONE_API_KEY" in st.secrets:
+        os.environ["PINECONE_API_KEY"] = st.secrets["PINECONE_API_KEY"]
+    if "ANTHROPIC_API_KEY" in st.secrets:
+        os.environ["ANTHROPIC_API_KEY"] = st.secrets["ANTHROPIC_API_KEY"]
+except Exception:
+    pass  # no secrets.toml present (e.g. running locally) — fall back to .env
 
 
 INDEX_NAME = "rag-docs"
