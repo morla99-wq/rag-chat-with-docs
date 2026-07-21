@@ -58,8 +58,16 @@ import os
 import time
 from dotenv import load_dotenv
 from pinecone import Pinecone, ServerlessSpec
+import streamlit as st
 
 load_dotenv()
+
+# Bridge Streamlit Cloud secrets into environment variables
+if "PINECONE_API_KEY" in st.secrets:
+    os.environ["PINECONE_API_KEY"] = st.secrets["PINECONE_API_KEY"]
+if "ANTHROPIC_API_KEY" in st.secrets:
+    os.environ["ANTHROPIC_API_KEY"] = st.secrets["ANTHROPIC_API_KEY"]
+
 
 INDEX_NAME = "rag-docs"
 EMBED_MODEL = "multilingual-e5-large"
