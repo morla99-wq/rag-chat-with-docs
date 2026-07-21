@@ -1,0 +1,6 @@
+pinecone
+anthropic
+streamlit
+pypdf
+tiktoken
+python-dotenv
